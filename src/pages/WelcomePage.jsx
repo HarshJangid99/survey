@@ -7,7 +7,7 @@ const WelcomePage = () => {
 
   const startSurvey = () => {
     navigate('/survey');
-    window.localStorage.clear()
+
   };
 
   return (
