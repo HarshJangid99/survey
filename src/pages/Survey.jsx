@@ -64,6 +64,7 @@ const Survey = () => {
           onPrevious={handlePrevious}
           onSkip={handleSkip}
           currentAnswer={currentAnswer}
+          currentQuestionIndex={currentQuestionIndex}
         />
       </div>
     </div>

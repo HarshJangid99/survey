@@ -1,6 +1,7 @@
 import React from 'react';
+import { questions } from '../utils/questions';
 
-const SurveyForm = ({ question, onAnswer, onNext, onPrevious, onSkip, currentAnswer }) => {
+const SurveyForm = ({ question, onAnswer, onNext, onPrevious, onSkip, currentAnswer,currentQuestionIndex }) => {
   const handleRatingClick = (rating) => {
     onAnswer(question.id, rating);
   };
@@ -61,7 +62,7 @@ const SurveyForm = ({ question, onAnswer, onNext, onPrevious, onSkip, currentAns
         <div className='flex flex-col md:flex-row justify-around mt-4 space-y-2 md:space-y-0'>
           <button type="button" onClick={onPrevious} className='bg-red-700 text-white font-medium p-2 rounded-xl w-full md:w-auto'>Previous</button>
           <button type="button" onClick={onSkip} className='font-medium w-full md:w-auto'>Skip</button>
-          <button type="submit" className='bg-green-700 text-white font-medium p-2 rounded-xl w-full md:w-auto'>Submit</button>
+          <button type="submit" className='bg-green-700 text-white font-medium p-2 rounded-xl w-full md:w-auto'>{currentQuestionIndex === questions.length-1 ? "submit" : "Next"}</button>
         </div>
       </div>
     </form>
